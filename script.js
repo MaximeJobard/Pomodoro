@@ -12,20 +12,19 @@ function timer(){
             seconds.textContent = 60;
         }
         else{
-            if(indicator.textContent == "Work"){
+            if(indicator.textContent == "Phase : Working"){
                 minutes.textContent = 5;
                 seconds.textContent = "0";
 
                 document.body.style.backgroundColor = 'green';
-                indicator.textContent = "Pause";
+                indicator.textContent = "Phase : Break";
             }
             else{
                 minutes.textContent = 25;
                 seconds.textContent = "0";
                 document.body.style.backgroundColor = 'red';
-                indicator.textContent = "Work";
+                indicator.textContent = "Phase : Working";
             }
-
         }
     }
 
@@ -35,6 +34,10 @@ function timer(){
 
     if(parseInt(seconds.textContent) < 10){
         seconds.textContent = "0" + seconds.textContent;
+    }
+
+    if(parseInt(minutes.textContent) < 10){
+        minutes.textContent = "0" + parseInt(minutes.textContent);
     }
 }
 
@@ -51,9 +54,5 @@ start.addEventListener('click', () => {
 })
 
 reset.addEventListener('click', () => {
-    minutes.textContent = 25;
-    seconds.textContent = "00";
-    reset.style.display = 'none';
-    start.style.display = 'block';
-    clearInterval(time);
+    window.location.reload();
 })
