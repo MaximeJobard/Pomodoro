@@ -1,5 +1,5 @@
 :root{
-    font-family: "Teko";
+    font-family: "Roboto";
 }
 
 *{
@@ -8,7 +8,7 @@
 }
 
 body{
-    background-color: red;
+    background-color: rgb(200, 0, 0);
 }
 
 .header-footer{
@@ -26,11 +26,12 @@ body{
     box-shadow: rgba(0, 0, 0, 0.5) 0 0 5px 5px;
     border-radius: 25%;
     margin-top: 25px;
-    width: 100px;
+    width: 150px;
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgb(230, 0, 0);
 }
 
 #indicator{
@@ -50,6 +51,8 @@ body{
     justify-content: center;
     flex-direction: row;
     flex-wrap: nowrap;
+    background-color: rgb(230, 0, 0);
+
 }
 
 .timer>*{
@@ -61,25 +64,38 @@ body{
 
 .button{
     margin: auto;
-    margin-top: 25px;
-    width: 100px;
+    margin-top: 15px;
+    width: 200px;
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .button>*{
-    width: 100%;
+    width: 80%;
+    margin-bottom: 2px;
+    margin-top: 2px;
 }
 
 #reset{
     display: none;
 }
 
-#controller{
-    margin: auto;
-    width: 100%;
+#ok, #infoPause, #infoWork, #minWork, #minPause{
+    display: none;
 }
-
 
 .footer{
     position: absolute;
-    bottom: 0;
+    width: 100%;
+    bottom: 0px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.footer>div{
+    width: 11.5%;
+    margin: auto;
 }

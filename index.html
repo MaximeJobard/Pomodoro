@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pomodoro</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -27,11 +27,22 @@
             <div class="button">
                 <button id="start">Start</button>
                 <button id="reset">Reset</button>
+                <button id="setting">Setting</button>
+
+                <form action="#" id="formSetting" method="get">
+
+                    <label for="minWork" id="infoWork">Enter time in minutes for work phase :</label>
+                    <input type="number" value=25 name="minWork" id="minWork" >
+                    <label for="minPause" id="infoPause">Enter time in minutes for pause phase :</label>
+                    <input type="number" value=5 name="minPause" id="minPause">
+                    <input type="submit" value="OK" id="ok">
+
+                </form>
             </div>
         </section>
     </main>
     <footer class="header-footer footer">
-
+        <div>Maxime JOBARD</div>
     </footer>
 </body>
 </html>
