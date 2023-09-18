@@ -74,6 +74,16 @@ function timer() {
     }
 }
 
+// Demander la permission pour les notifications
+if (Notification.permission !== "granted") {
+    Notification.requestPermission().then(function (permission) {
+        if (permission === "granted") {
+            console.log("Permission pour les notifications accordée.");
+        }
+    });
+}
+
+
 // Event listener to start the timer
 start.addEventListener('click', () => {
     reset.style.display = 'block';
