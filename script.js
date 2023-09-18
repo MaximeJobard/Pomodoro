@@ -17,7 +17,7 @@ let storage = localStorage;
 let setWork = storage.getItem("setWork");
 let setPause = storage.getItem("setPause");
 
-// Initializing default values if parameters are not specified in the Local Storage
+// Initializing default values if parameters are not specified in the Local
 if (storage.getItem("setWork") == null) {
     setWork = 25; // Default work duration of 25 minutes
     setPause = 5; // Default pause duration of 5 minutes
@@ -73,16 +73,6 @@ function timer() {
         minutes.textContent = "0" + parseInt(minutes.textContent); // Add leading "0" to minutes if less than 10
     }
 }
-
-// Demander la permission pour les notifications
-if (Notification.permission !== "granted") {
-    Notification.requestPermission().then(function (permission) {
-        if (permission === "granted") {
-            console.log("Permission pour les notifications accordée.");
-        }
-    });
-}
-
 
 // Event listener to start the timer
 start.addEventListener('click', () => {
