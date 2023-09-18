@@ -8,7 +8,7 @@
 }
 
 body{
-    background-color: rgb(200, 0, 0);
+    background-color: rgb(180, 0, 0);
 }
 
 .header-footer{
@@ -31,7 +31,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(230, 0, 0);
+    background-color: rgb(210, 0, 0);
 }
 
 #indicator{
@@ -52,7 +52,6 @@ body{
     flex-direction: row;
     flex-wrap: nowrap;
     background-color: rgb(230, 0, 0);
-
 }
 
 .timer>*{
@@ -85,6 +84,10 @@ body{
 
 #ok, #infoPause, #infoWork, #minWork, #minPause{
     display: none;
+}
+
+label{
+    color: white;
 }
 
 .footer{

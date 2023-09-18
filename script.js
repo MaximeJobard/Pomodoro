@@ -17,6 +17,10 @@ const url = new URLSearchParams(window.location.search);
 let setWork = url.get('minWork');
 let setPause = url.get('minPause');
 
+// let monStockage = localStorage;
+// let setWork = monStockage.getItem("setWork");
+// let setPause = monStockage.getItem("setPause");
+
 if(setWork == null){
     setWork = 25;
     setPause = 5;
@@ -39,7 +43,6 @@ function timer(){
             if(indicator.textContent == "Phase : Working"){
                 minutes.textContent = setPause;
                 seconds.textContent = "0";
-
                 document.body.style.backgroundColor = 'green';
                 timerDisplay.style.backgroundColor = "rgb(0, 150, 0)";
                 mode.style.backgroundColor = "rgb(0, 150, 0)";
@@ -113,6 +116,10 @@ ok.addEventListener('click', () => {
         
         setWork = parseInt(minWork.value);
         setPause = parseInt(minPause.value);
+        minutes.textContent = parseInt(minWork.value);
+
+        // monStockage.setItem("setWork");
+        // monStockage.setItem("setPause");
     }
     else{
         alert("Values ​​must be positive")
