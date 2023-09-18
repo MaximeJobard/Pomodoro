@@ -13,16 +13,18 @@ let minPause = document.getElementById("minPause"); // Pause duration input fiel
 let timerDisplay = document.querySelector(".timer"); // Timer display
 let mode = document.querySelector(".mode"); // Mode display (work or pause)
 
-// Retrieving URL parameters
-const url = new URLSearchParams(window.location.search);
-let setWork = url.get('minWork'); // Work duration in minutes
-let setPause = url.get('minPause'); // Pause duration in minutes
+let storage = localStorage;
+let setWork = storage.getItem("setWork");
+let setPause = storage.getItem("setPause");
 
-// Initializing default values if parameters are not specified in the URL
-if (setWork == null) {
+// Initializing default values if parameters are not specified in the Local Storage
+if (storage.getItem("setWork") == null) {
     setWork = 25; // Default work duration of 25 minutes
     setPause = 5; // Default pause duration of 5 minutes
 }
+
+storage.setItem("setWork", setWork);
+storage.setItem("setPause", setPause);
 
 // Configuring initial display of minutes
 if (parseInt(setWork) >= 10) {
@@ -96,8 +98,8 @@ setting.addEventListener('click', () => {
     ok.style.display = 'block';
     infoWork.style.display = 'block';
     infoPause.style.display = 'block';
-    minWork.setAttribute('value', setWork.toString()); // Display current work duration in the input field
-    minPause.setAttribute('value', setPause.toString()); // Display current pause duration in the input field
+    minWork.setAttribute('value', setWork); // Display current work duration in the input field
+    minPause.setAttribute('value', setPause); // Display current pause duration in the input field
 });
 
 // Event listener to confirm duration settings
@@ -120,6 +122,10 @@ ok.addEventListener('click', () => {
         setWork = parseInt(minWork.value); // Update the work duration
         setPause = parseInt(minPause.value); // Update the pause duration
         minutes.textContent = parseInt(minWork.value);
+
+        localStorage.setItem("setWork", setWork);
+        localStorage.setItem("setPause", setPause);
+
     } else {
         alert("Values must be positive");
     }
