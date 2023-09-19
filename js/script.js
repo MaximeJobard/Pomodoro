@@ -79,7 +79,7 @@ start.addEventListener('click', () => {
     reset.style.display = 'block';
     start.style.display = 'none';
     setting.style.display = 'none';
-    setInterval(timer, 10); // Call the timer function every second
+    setInterval(timer, 1000); // Call the timer function every second
 });
 
 // Event listener to reset the timer
