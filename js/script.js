@@ -74,7 +74,7 @@ function timer() {
     }
 }
 
-// Event listener to start the timer
+// Event listener to start the timer  
 start.addEventListener('click', () => {
     reset.style.display = 'block';
     start.style.display = 'none';
