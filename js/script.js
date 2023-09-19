@@ -54,7 +54,7 @@ function timer() {
                 minutes.textContent = setWork;
                 seconds.textContent = "0";
                 document.body.style.backgroundColor = 'rgb(200, 0, 0)';
-                timerDisplay.style.backgroundColor = "rgb(210, 0, 0)";
+                timerDisplay.style.backgroundColor = "rgb(230, 0, 0)";
                 mode.style.backgroundColor = "rgb(230, 0, 0)";
                 indicator.textContent = "Phase : Working";
             }
@@ -79,7 +79,7 @@ start.addEventListener('click', () => {
     reset.style.display = 'block';
     start.style.display = 'none';
     setting.style.display = 'none';
-    setInterval(timer, 1000); // Call the timer function every second
+    setInterval(timer, 10); // Call the timer function every second
 });
 
 // Event listener to reset the timer
@@ -105,12 +105,6 @@ setting.addEventListener('click', () => {
 // Event listener to confirm duration settings
 ok.addEventListener('click', () => {
     if (minWork.value >= 1 && minPause.value >= 1) {
-        if (parseInt(minWork.value) >= 10) {
-            minutes.textContent = minWork.value; // Display the new work duration
-        } else {
-            minutes.textContent = "0" + minWork.value; // Display the new work duration with leading "0" if less than 10
-        }
-
         start.style.display = 'block';
         setting.style.display = 'block';
         minWork.style.display = 'none';
@@ -122,6 +116,12 @@ ok.addEventListener('click', () => {
         setWork = parseInt(minWork.value); // Update the work duration
         setPause = parseInt(minPause.value); // Update the pause duration
         minutes.textContent = parseInt(minWork.value);
+
+        if (parseInt(minWork.value) >= 10) {
+            minutes.textContent = minWork.value; // Display the new work duration
+        } else {
+            minutes.textContent = "0" + minWork.value; // Display the new work duration with leading "0" if less than 10
+        }
 
         localStorage.setItem("setWork", setWork);
         localStorage.setItem("setPause", setPause);
